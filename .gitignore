@@ -1,0 +1,5 @@
+/data
+/.venv
+/Scraper/links.txt
+/Scraper/cleaned_links.txt
+Model\similarty.pkl
