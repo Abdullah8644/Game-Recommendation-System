@@ -5,20 +5,20 @@ from PIL import Image
 from io import BytesIO
 import numpy as np
 
-def load_split_similarity(file_paths):
-    similarity_parts = []
-    for file_path in file_paths:
-        with open(file_path, 'rb') as file:
-            similarity_parts.append(pickle.load(file))
-    # Combine all parts into a single array
-    return np.concatenate(similarity_parts)
+num_parts = 2  # Make sure this matches the number you used for splitting
 
+combined_data = []
+
+# Load each part and append to the combined_data list
+for idx in range(num_parts):
+    with open(fr'Model\similarty{idx + 1}.pkl', 'rb') as part_file:
+        part_data = pickle.load(part_file)
+        combined_data.extend(part_data)
 
 # Load data
 data = pickle.load(open(r"Model/moives.pkl", "rb"))
 moives_list = data["title"].values
-similarity_data=[r"Model\similarty1.pkl",r"Model\similarty2.pkl"]
-similarity=load_split_similarity(similarity_data)
+similarity=combined_data
 
 
 
