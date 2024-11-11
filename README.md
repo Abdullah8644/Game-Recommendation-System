@@ -5,7 +5,7 @@ This project implements a game recommendation system using publicly available da
 
 ## Streamlit Link
 
-
+https://game-recommendation-web-jfafgj6nlv95ghpkbxyfve.streamlit.app
 
 ## Features
 - **Web Scraping**: Utilizes Selenium to gather game data from the Play Store.
